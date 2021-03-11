@@ -13,12 +13,11 @@ const lastClone = $li[$li.length - 1].cloneNode(true);
 
 firstClone.id = 'first-clone';
 lastClone.id = 'last-clone';
-console.log(firstClone.id, lastClone.id, $li[index]);
+
 $slide.append(firstClone);
 $slide.prepend(lastClone);
 
 let slideWidth = $li[index].offsetWidth;
-console.log(slideWidth);
 
 const startSlide = () => {
 	slideId = setInterval(() => {
@@ -41,6 +40,7 @@ $slide.addEventListener('transitionend', () => {
 	}
 	console.log('transition end');
 });
+
 const moveToPreviousSlide = () => {
 	if (index <= 0) return;
 	index--;
@@ -64,28 +64,3 @@ $slideGroup.addEventListener('mouseleave', startSlide);
 $next.addEventListener('click', moveToNextSlide);
 $prev.addEventListener('click', moveToPreviousSlide);
 startSlide();
-
-// const TimeOut = () => {
-// 	setTimeout(() => {
-// 		$slide.style.transition = '1s linear';
-// 	}, 400);
-// };
-
-// $next.onclick = (e) => {
-// 	slideWidth += $slide.children[0].offsetWidth;
-// 	console.log($li);
-// 	count += 1;
-
-// 	$slide.addEventListener('transitionend', () => {
-// 		if (count > 2) {
-// 			$slide.style.transition = 'none';
-// 			count = 0;
-// 			slideWidth = 0;
-// 			TimeOut();
-// 		}
-// 		console.log(count);
-// 		console.log('end');
-// 	});
-
-// 	$slide.style.transform = `translateX(-${slideWidth}px)`;
-// };
