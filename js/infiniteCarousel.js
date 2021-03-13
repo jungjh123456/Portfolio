@@ -5,12 +5,12 @@ const $next = document.querySelector('.next');
 const interval = 2000;
 
 let $li = document.querySelectorAll('.slides > li');
-let index = 0;
+let index = 1;
 let slideId;
 
 const firstClone = $li[0].cloneNode(true);
 const lastClone = $li[$li.length - 1].cloneNode(true);
-
+console.log(firstClone);
 firstClone.id = 'first-clone';
 lastClone.id = 'last-clone';
 
@@ -18,7 +18,8 @@ $slide.append(firstClone);
 $slide.prepend(lastClone);
 
 let slideWidth = $li[index].offsetWidth;
-
+$slide.style.transition = 'none';
+$slide.style.transform = `translateX(${-slideWidth * index}px)`;
 const startSlide = () => {
 	slideId = setInterval(() => {
 		moveToNextSlide();
@@ -31,6 +32,7 @@ $slide.addEventListener('transitionend', () => {
 	if ($li[index].id === firstClone.id) {
 		$slide.style.transition = 'none';
 		index = 1;
+
 		$slide.style.transform = `translateX(${-slideWidth * index}px)`;
 	}
 	if ($li[index].id === lastClone.id) {

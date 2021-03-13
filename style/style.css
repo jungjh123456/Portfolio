@@ -3,6 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
 }
 
 .container {
@@ -11,8 +12,8 @@ body {
   border: 1px solid;
   /* align-items: center; */
   /* width: 300px; */
-  width: 80%;
-  overflow: hidden;
+  width: 30%;
+  /* overflow: hidden; */
   position: relative;
   
 }
