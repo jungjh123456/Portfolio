@@ -10,7 +10,7 @@ let slideId;
 
 const firstClone = $li[0].cloneNode(true);
 const lastClone = $li[$li.length - 1].cloneNode(true);
-console.log(firstClone);
+
 firstClone.id = 'first-clone';
 lastClone.id = 'last-clone';
 
