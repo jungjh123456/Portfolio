@@ -3,9 +3,10 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .inner {
   display: flex;
-  
+
 }
 
 p {
@@ -17,5 +18,5 @@ p {
 .inner div {
   width: calc(100% - 50%);
   border: 1px solid;
-  
+
 }
